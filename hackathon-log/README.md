@@ -122,3 +122,10 @@ The [picture log](photos/README.md) captures the team’s build-day story.
 - Recorded the Rev1 Labs venue and address, event hours, parking and food details, full Columbus build-day schedule, and the optional local show-and-tell format.
 - Added the global, developer infrastructure, and local sponsor groups along with the announced global prizes.
 - Preserved the authenticated portal's 4:30 PM EDT submission cutoff as the authoritative deadline when the event overview's suggested 3:30–4:00 PM submission window differed.
+
+### 14:46 EDT — Five more build-day photos added
+
+- Added five photos covering Jack and Bruce building together at 11:44 AM, Bruce reviewing the requirements at 1:02 PM, a short coloring break at 1:31 PM, lunch during the build at 1:43 PM, and Bruce testing Play Eleven at 2:42 PM.
+- Converted the five HEIC originals, totaling about 12.3 MB, into web-friendly 1600×1200 JPEGs totaling about 1.5 MB.
+- Visually checked every converted image for content, orientation, and caption accuracy.
+- Removed embedded GPS coordinates, device details, capture settings, and other EXIF metadata before publishing the photos.
