@@ -86,3 +86,11 @@ The [picture log](photos/README.md) captures the team’s build-day story.
 - Bruce confirmed that a card drawn from the deck can be discarded to flip any one face-down grid card.
 - Bruce also confirmed that a kept draw can replace any face-up or face-down grid card; the replaced card goes face up on the discard pile.
 - Updated the product requirements and removed this item from the assumptions and open questions.
+
+### 13:07 EDT — Player and AI direction confirmed
+
+- Jack and Bruce confirmed that every game has one human player and all remaining seats are AI opponents.
+- Verified the Play Ten commitment rule in the reference repository and adopted it for Play Eleven: a player must keep the pile or grid card they touch, and a discard-pile card must be swapped into the grid.
+- Removed the separate Claude button from the Play Eleven requirements. The LLM experience will live in interactive opponents that make real game decisions, explain their moves, talk, and react with playful personalities.
+- Updated the product requirements to mark all three decisions as confirmed and removed their former assumption and open-question entries.
+- Per Jack's direction, this was a documentation-only update; no game implementation was started.

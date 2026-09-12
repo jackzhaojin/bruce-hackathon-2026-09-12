@@ -8,7 +8,7 @@
 **Lead game designer:** Bruce
 **Producer / build lead:** Jack
 **Scribe:** Claude (requirements captured verbatim from Bruce, then organized)
-**Status:** Draft for build. Assumptions are marked `[ASSUMPTION]`. Open questions are collected in Section 15.
+**Status:** Draft for build, updated with Jack and Bruce's post-intake decisions. Assumptions are marked `[ASSUMPTION]`. Open questions are collected in Section 15.
 
 ---
 
@@ -33,12 +33,12 @@ Play Eleven shares most of its structure with Play Ten (same grid, same draw/dis
 
 1. Ship a playable Play Eleven with the full 166-card deck and Bruce's scoring rules.
 2. AI opponents that actually reason: Chip **explains his moves** in plain language.
-3. Reuse Play Ten's proven UI patterns (grid, discard pile, showing score, autosave, Claude area).
+3. Reuse Play Ten's proven UI patterns (grid, discard pile, showing score, autosave, and menus).
 4. Cross-navigation between Play Ten, Lava Dash, and Play Eleven from a shared menu.
 
 ## 3. Non-goals (v0.1)
 
-- Online multiplayer with real remote humans. `[ASSUMPTION]` All non-human seats are AI, as in Play Ten.
+- Online multiplayer with real remote humans. Every game has one human player; all remaining seats are AI opponents.
 - Other Topgolf modes (Angry Birds, Sonic, Shot Shuffle, etc.) mentioned during Play Ten. Not in scope here.
 
 ---
@@ -53,7 +53,7 @@ Play Eleven shares most of its structure with Play Ten (same grid, same draw/dis
 
 - Player count is chosen on the main menu (buttons for 2 through 10).
 - `[ASSUMPTION]` Once a game starts, the player count is **locked** until all 11 holes are done. (Bruce: "you can't make any more room until the game is over, and you can't delete any until the game is over.")
-- `[ASSUMPTION]` Seat 1 is the human; the rest are AI players, as in Play Ten.
+- **Seat 1 is the only human player. Every other seat is an AI opponent.** Jack and Bruce confirmed this after the intake was processed.
 
 ---
 
@@ -158,7 +158,7 @@ Bruce's worked example: Player 2 sees a 5 on the discard pile, doesn't want it, 
 
 Bruce confirmed after the intake was processed that a drawn card may replace either a face-up or face-down grid card. A replaced face-down card is revealed when it is discarded.
 
-`[ASSUMPTION]` Play Ten's commitment rule carries over: once you take from the discard pile, you must use that card. No take-backs. See Open Question 1.
+Play Ten's **commitment rule** carries over exactly: players must go with what they touch and cannot retake a card. A card taken from the discard pile **must** replace a face-up or face-down card in that player's grid; it cannot be thrown back or exchanged for a deck draw.
 
 ---
 
@@ -285,7 +285,6 @@ There are **two independent bonus families**, and they **stack** (add together).
 - After choosing players: deal option buttons **Lowest card deals / Highest card deals / Random person deals**
 - **Lava Dash** button (goes to Lava Dash, which runs Lava Dash rules)
 - **Play Ten** button (goes to Play Ten, which runs Play Ten rules)
-- **Claude** button (see 11.4)
 
 ### 11.2 Cross-game navigation
 
@@ -306,19 +305,23 @@ When you enter a game, that game's rules apply. Lava Dash also has its own Claud
 - **Bug recovery:** if the game bugs out mid-hole (Bruce's example: a player has 7 cards flipped, another has 6, and something breaks), show two buttons: **Retake Hole** or **Move On**. The player chooses.
 - **Next arrow** after flipping the last cards at hole end (Section 8).
 
-### 11.4 Claude button
+### 11.4 AI interaction
 
-`[ASSUMPTION]` Same as Play Ten: opens the Claude area, and a **Play Eleven** button inside brings you back to the main menu. What the Claude area *does* in this game is Open Question 8 (candidates Bruce was offered: play against Claude, ask for a hint, explain the rules, announce the game).
+- Play Eleven does **not** need a separate Claude area or Claude button.
+- The AI experience lives in Chip and the other opponents at the card table.
+- AI opponents talk during the game, explain their moves, and react to cards, matches, bonuses, scores, and other players.
+- Their dialogue should be concise, family-friendly, playful, and shaped by distinct personalities so the table feels lively without slowing the game.
 
 ---
 
 ## 12. AI Players
 
 - **Chip** and the other AI players keep **the same personalities as usual** (as defined in the play-ten / Lava Dash codebase). `[ASSUMPTION]` Names and personalities are sourced from the play-ten repository; they were not restated in this session.
-- **Chip explains his moves.** After acting, Chip says in plain language why he did what he did. (Bruce picked this from a list; he did not pick trash-talk, hints, or play-style variation.)
-- **Hackathon requirement (Jack):** AI players are backed by an LLM through **OpenRouter**. The AI must be doing real in-game reasoning, not just scripted heuristics.
+- **Every non-human seat is an interactive AI opponent.** The opponents should talk and react throughout play so the game feels like a fun table of characters rather than silent computer turns.
+- **Chip and the other opponents explain their moves.** After acting, an opponent says in plain language what it did and why.
+- **Hackathon requirement (Jack):** AI players are backed by an LLM through **OpenRouter**. The LLM must participate in real in-game decisions and generate the opponents' contextual dialogue; scripted heuristics alone do not satisfy this requirement.
 - `[ASSUMPTION]` For a 10-player table, AI turns should be fast (parallel or cached prompting, short outputs) so a hole doesn't drag. Design detail for the build agent.
-- Suggested minimum AI contract for the build agent: given the visible game state (own grid, discard top, hole number, opponents' face-up cards, purple in play or not), return `{action, target_slot, explanation}`.
+- Suggested minimum AI contract for the build agent: given the visible game state (own grid, discard top, hole number, opponents' face-up cards, purple in play or not) and the opponent's personality, return `{action, target_slot, explanation, dialogue}`.
 
 ---
 
@@ -337,17 +340,14 @@ When you enter a game, that game's rules apply. Lava Dash also has its own Claud
 
 | # | Assumption | Where |
 |---|---|---|
-| A1 | Seat 1 is human, all other seats are AI | 4 |
 | A2 | Player count is locked once a game starts | 4 |
 | A3 | Reversed hole-color order belongs to Birdie | 5.2, 5.3 |
 | A4 | "Highest card deals" mirrors the default rule; "Random person deals" picks a random dealer | 6 |
 | A5 | With 3+ players, order proceeds by seat after the first player, rotating each hole | 6 |
-| A7 | Taking from the discard pile is a commitment (Play Ten rule) | 7 |
 | A8 | Flipped cards at hole end count at face value; no end-the-hole penalty | 8 |
 | A9 | Two matched columns of different cards earn no bonus | 9.2 |
 | A10 | Four reds = -9 is columns (-4) plus four of a kind (-5) | 9.2 |
 | A11 | Only first place wins; rankings are displayed for everyone | 10 |
-| A12 | Claude button behaves like Play Ten's (opens Claude area, Play Eleven button returns to menu) | 11.4 |
 | A13 | AI names/personalities come from the play-ten repository | 12 |
 
 ---
@@ -356,13 +356,11 @@ When you enter a game, that game's rules apply. Lava Dash also has its own Claud
 
 | # | Question | Notes |
 |---|---|---|
-| 1 | Does taking from the discard pile lock you in (no take-backs)? | Asked twice; not answered. Assumed yes. |
 | 3 | Do two matched columns of *different* cards get a -5 bonus, or is -5 only for four of a kind? | Bruce said both at different times; final ruling was "has to be the same number." Assumed same card only. |
 | 4 | Is the four-reds -9 the total for those four cards, or a bonus on top of the column scores? | Assumed total (-2 + -2 + -5). |
 | 5 | Which card uses the reversed hole-color order? | Assumed Birdie. |
 | 6 | With many players, do the top half "win," or only first place? | Assumed first place only. |
 | 7 | When "Highest card deals" is chosen, does lowest go first? What happens under "Random person deals"? | Assumed mirror / random. |
-| 8 | What does the Claude button do inside Play Eleven? | Not answered. |
 | 9 | Does the "showing" score include bonuses live, or only at the score sheet? | Play Ten behavior assumed. |
 | 10 | Any special rule when a player's remaining face-down cards are flipped at hole end (for example, a penalty for the player who ended the hole)? | Assumed none. |
 
