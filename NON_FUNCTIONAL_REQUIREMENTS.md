@@ -60,11 +60,11 @@ These requirements define how the hackathon game must operate regardless of the 
 ## POC acceptance checks
 
 - [x] The root page loads locally with no build step.
-- [ ] The page redirects its public HTTP address to HTTPS.
+- [x] The page redirects its public HTTP address to HTTPS.
 - [x] An empty key cannot submit a request.
 - [x] A player can explicitly save a key with the Save key button.
 - [x] The Forget button removes both the field value and saved key.
 - [x] OpenRouter accepts browser preflight from the production origin.
 - [x] A valid key produces a visible model response from both the low-cost option and the free router.
 - [x] An invalid key produces a useful error without revealing the key.
-- [ ] The deployed GitHub Pages page loads its HTML, CSS, and JavaScript successfully.
+- [x] The deployed GitHub Pages page loads its HTML, CSS, and JavaScript successfully.

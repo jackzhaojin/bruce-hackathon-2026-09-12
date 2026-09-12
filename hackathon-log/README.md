@@ -63,3 +63,11 @@ The [picture log](photos/README.md) captures the team’s build-day story.
 - Verified the local app and assets over HTTP, passed four automated static and security tests, and completed a full-page browser visual review.
 - Confirmed OpenRouter CORS preflight from the production origin and successfully tested both model options with the ignored local key.
 - Used a fake key in Chrome to verify Save across reload, Forget, required-field validation, and safe authentication-error display.
+
+### 12:31 EDT — OpenRouter POC published
+
+- Committed and pushed the public test harness to `main` in commit `aa4725b`.
+- Confirmed GitHub Pages completed its build from the repository root.
+- Opened the public HTTP address in Chrome and verified that it redirected to HTTPS.
+- Confirmed the live page loaded its interface, model choices, key controls, prompts, and diagnostics successfully.
+- Left the verified public page open in Chrome for Jack and Bruce to try.
