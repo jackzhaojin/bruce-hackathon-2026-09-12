@@ -1,13 +1,22 @@
-# Hackathon Project Record
+# AI Tinkerers Columbus — Agents, Everywhere
+
+This repository was created for the **Agents, Everywhere** hackathon organized by **AI Tinkerers Columbus** on September 12, 2026.
+
+## Event
+
+- **Organizer:** AI Tinkerers Columbus
+- **Hackathon:** Agents, Everywhere
+- **Location:** Columbus, Ohio
+- **Date:** September 12, 2026
+- **Team status:** Accepted
+- **Event portal:** [AI Tinkerers Columbus hackathon portal](https://columbus.aitinkerers.org/hackathons/h_Lv03K-ob6sU/handbook)
 
 ## Team
 
 - **Team name:** Jack and Son
-- **Location:** Columbus, Ohio
 - **Team:** A parent and nine-year-old son
-- **Build date:** September 12, 2026
 - **Project title:** To be decided after the product requirements document is complete
-- **Suggested GitHub repository:** `jack-and-son-hackathon-2026-09-12`
+- **Public GitHub repository:** [jack-and-son-hackathon-2026-09-12](https://github.com/jackzhaojin/jack-and-son-hackathon-2026-09-12)
 
 ## Challenge
 
@@ -55,4 +64,3 @@ Every eligible project enters the same global competition.
 - Show the AI changing the experience in a meaningful way.
 - Keep the recorded demonstration at or under two minutes.
 - Avoid showing an API key, browser storage, private tabs, or other secrets in the recording.
-

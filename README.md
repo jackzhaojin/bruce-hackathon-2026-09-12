@@ -1,6 +1,6 @@
-# Jack and Son Hackathon 2026-09-12
+# Jack and Son — Agents, Everywhere Hackathon
 
-A browser game created by **Jack and Son**, a parent-and-son team competing at a hackathon in Columbus, Ohio, on September 12, 2026.
+A browser game created by **Jack and Son**, an accepted parent-and-son team at the **AI Tinkerers Columbus** “Agents, Everywhere” hackathon in Columbus, Ohio, on September 12, 2026.
 
 The game will be built with JavaScript, use AI as part of its core interaction, and be published as a static site with GitHub Pages. The product requirements are currently being written.
 
@@ -23,13 +23,10 @@ The current plan is to let each player enter their own OpenRouter API key in the
 
 Because local storage can be read by JavaScript running on the same site, the finished game should include a clear **Forget API key** control and avoid third-party scripts where possible. The repository's `.gitignore` excludes local environment files, but that does not protect a key hardcoded into a JavaScript file.
 
-## Suggested repository name
+## Repository
 
 `jack-and-son-hackathon-2026-09-12`
-
-The final project or game name can replace the first part once the product requirements are ready, while keeping `hackathon-2026-09-12` in the repository name.
 
 ## Event record
 
 See [HACKATHON.md](HACKATHON.md) for the challenge, eligibility rules, technical direction, and required submission materials.
-
