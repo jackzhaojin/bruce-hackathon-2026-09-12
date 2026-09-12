@@ -71,3 +71,12 @@ The [picture log](photos/README.md) captures the team’s build-day story.
 - Opened the public HTTP address in Chrome and verified that it redirected to HTTPS.
 - Confirmed the live page loaded its interface, model choices, key controls, prompts, and diagnostics successfully.
 - Left the verified public page open in Chrome for Jack and Bruce to try.
+
+### 12:53 EDT — Bruce's requirements processed
+
+- Added the local `intake/` folder to `.gitignore` so source drops stay out of the public repository.
+- Read the 374-line Play Eleven product requirements and the 1,255-line companion conversation log as project inputs.
+- Published a processed product requirements document for **Play Eleven: Block Party** and retained all unconfirmed points as labeled assumptions.
+- Added a public-safe requirements-session artifact, replacing the child designer's name with the gamer name Bruce while preserving the voice-transcription record.
+- Updated the repository status, working title, and AI direction: OpenRouter-backed opponents reason from visible game state and explain their moves.
+- Checked both intake files for common API-key and email patterns before producing the tracked copies; none were found.
