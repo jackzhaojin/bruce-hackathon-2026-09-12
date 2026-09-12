@@ -19,7 +19,7 @@ import {
   scoreGrid,
   shuffle,
   visibleScore,
-} from './game-core.js';
+} from './game-core.js?v=20260912-1453';
 
 const OPENROUTER_URL = 'https://openrouter.ai/api/v1/chat/completions';
 const KEY_STORAGE = 'bruceHackathon.openRouterKey';

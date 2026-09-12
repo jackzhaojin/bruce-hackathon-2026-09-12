@@ -7,10 +7,21 @@ const read = (path) => readFile(new URL(`../${path}`, import.meta.url), 'utf8');
 test('GitHub Pages entry point uses relative local assets', async () => {
   const html = await read('index.html');
 
-  assert.match(html, /href="style\.css"/);
+  assert.match(html, /href="style\.css\?v=[^"]+"/);
   assert.match(html, /src="redirect\.js"/);
-  assert.match(html, /type="module" src="app\.js"/);
+  assert.match(html, /type="module" src="app\.js\?v=[^"]+"/);
   assert.doesNotMatch(html, /(?:src|href)="\//);
+});
+
+test('versioned public modules bypass stale GitHub Pages asset caches', async () => {
+  const [html, app] = await Promise.all([read('index.html'), read('app.js')]);
+  const appVersion = html.match(/src="app\.js\?v=([^"]+)"/)?.[1];
+  const styleVersion = html.match(/href="style\.css\?v=([^"]+)"/)?.[1];
+  const coreVersion = app.match(/from '\.\/game-core\.js\?v=([^']+)'/)?.[1];
+
+  assert.ok(appVersion);
+  assert.equal(styleVersion, appVersion);
+  assert.equal(coreVersion, appVersion);
 });
 
 test('page exposes an accessible player-owned key flow', async () => {

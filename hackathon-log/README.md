@@ -136,5 +136,6 @@ The [picture log](photos/README.md) captures the team’s build-day story.
 - Added a visible **Skip (keep it face down)** button beside the turn instruction while keeping the final face-down card available as the alternate Flip choice.
 - Applied the same legal choice to OpenRouter and quick-strategy opponents through the structured AI decision contract and validation layer.
 - Locked the result phase after a placement, flip, or skip so repeated input cannot perform an extra action before the next turn.
-- Added a business-rule test for the seven-card boundary; all 14 automated tests pass.
+- Added business-rule and cache-version tests for the seven-card boundary and its deployment; all 15 automated tests pass.
 - Reproduced the exact state locally in a two-player browser game and verified both branches: Skip preserved the face-down card and advanced to Chip, while Flip revealed it and correctly started Chip's final turn. The browser reported no warnings or errors.
+- The first post-deploy retest exposed stale browser-cached modules even after GitHub Pages finished building. Added matching version tags to the CSS, app module, and core module so existing players receive the corrected rules immediately.
