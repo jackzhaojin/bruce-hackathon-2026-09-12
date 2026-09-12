@@ -70,4 +70,4 @@ These requirements define how the hackathon game must operate regardless of the 
 - [x] A two-player browser game completes all 11 holes through final reveal, scoring, totals, and ranking.
 - [x] A 10-player table deals one human and nine named AI opponents.
 - [x] The local preview blocks ignored inputs, development secrets, and Git metadata.
-- [ ] The deployed GitHub Pages game loads its HTML, CSS, JavaScript, and complete playable loop successfully.
+- [x] The deployed GitHub Pages game loads its HTML, CSS, JavaScript, and complete playable loop successfully.

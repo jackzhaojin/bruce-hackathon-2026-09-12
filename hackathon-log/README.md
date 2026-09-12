@@ -106,3 +106,12 @@ The [picture log](photos/README.md) captures the team’s build-day story.
 - Fixed the human-winner headline discovered during the final-screen review and confirmed the final results screen visually with no browser console warnings or errors.
 - Passed all 13 automated game, scoring, AI-normalization, accessibility, static-site, HTTPS, and security tests. Verified the four public local assets return HTTP 200, four private paths return 404, and the initial app files total about 96 KB.
 - Sent one current game-decision request with the ignored local OpenRouter key to `openai/gpt-5.4-nano`; it returned HTTP 200 and the complete structured move, explanation, and dialogue contract without exposing the key.
+
+### 14:26 EDT — Play Eleven published and cloud-tested
+
+- Pushed the playable build to `main` in commit `0f6be60` and confirmed GitHub Pages completed the build for that exact commit.
+- Verified the deployed HTML, CSS, game module, core module, and HTTPS redirect script all return HTTP 200 and match the committed files byte for byte.
+- Opened the public HTTP address in Chrome and confirmed it redirects to the final HTTPS game with the Play Eleven interface rendered.
+- Started a fresh two-player game on the deployed site without a key, completed dealer selection and opening flips, and watched Chip make multiple interactive fallback turns.
+- Exercised the human draw, discard, and face-down flip flow, used the recovery menu to enter final reveal, flipped the remaining cards, and reached the hole-one scorecard with correct player totals.
+- Confirmed the deployed flow produced no browser console warnings or errors and left the public game open in Chrome for the team.
