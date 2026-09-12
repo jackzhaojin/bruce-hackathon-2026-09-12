@@ -126,8 +126,9 @@ The [picture log](photos/README.md) captures the team’s build-day story.
 ### 14:46 EDT — Five more build-day photos added
 
 - Added five photos covering Jack and Bruce building together at 11:44 AM, Bruce reviewing the requirements at 1:02 PM, a short coloring break at 1:31 PM, lunch during the build at 1:43 PM, and Bruce testing Play Eleven at 2:42 PM.
-- Converted the five HEIC originals, totaling about 12.3 MB, into web-friendly 1600×1200 JPEGs totaling about 1.5 MB.
+- Converted the five HEIC originals, totaling about 12.3 MB, into web-friendly JPEGs measuring 1600 pixels on their longest edge and totaling about 1.5 MB.
 - Visually checked every converted image for content, orientation, and caption accuracy.
+- Preserved the first two photos in landscape orientation and normalized the three vertical photos to 1200×1600 portrait orientation.
 - Removed embedded GPS coordinates, device details, capture settings, and other EXIF metadata before publishing the photos.
 
 ### 14:53 EDT — Bruce's seven-card Skip defect fixed
@@ -139,3 +140,16 @@ The [picture log](photos/README.md) captures the team’s build-day story.
 - Added business-rule and cache-version tests for the seven-card boundary and its deployment; all 15 automated tests pass.
 - Reproduced the exact state locally in a two-player browser game and verified both branches: Skip preserved the face-down card and advanced to Chip, while Flip revealed it and correctly started Chip's final turn. The browser reported no warnings or errors.
 - The first post-deploy retest exposed stale browser-cached modules even after GitHub Pages finished building. Added matching version tags to the CSS, app module, and core module so existing players receive the corrected rules immediately.
+
+### 14:59 EDT — Seven-card Skip verified in production
+
+- Published Bruce's rule fix in commit `4a54478`, then published the cache-version repair in commit `2a6e9dd` after the first cloud retest exposed a stale module.
+- Recreated a seven-visible-card hand from a fresh two-player game on the public GitHub Pages site.
+- Confirmed the deployed **Skip (keep it face down)** button appears only after discarding a deck draw in that state, leaves the eighth card face down, records the choice in table talk, and advances to Chip.
+- On the following human turn, chose the alternate Flip action and confirmed the eighth card was revealed and the normal final-turn sequence began.
+- Confirmed the production browser reported no warnings or errors and left the corrected public game open for Jack and Bruce.
+
+### 14:59 EDT — Three photos rotated upright
+
+- Rotated the 1:31 PM coloring break, 1:43 PM lunch, and 2:42 PM tablet test photos 90 degrees clockwise. The earlier HEIC conversion dropped the orientation flag without applying it, so the three portrait shots displayed sideways.
+- Re-checked the three JPEGs after rotation: 1200×1600 portrait, no EXIF or GPS markers, captions in the picture log still accurate.
