@@ -2,6 +2,10 @@
 
 Use this page as the copy-and-paste source for the AI Tinkerers submission portal. The submission deadline is **September 12, 2026 at 4:30 PM EDT**.
 
+## Submission result
+
+**Submitted on time.** Jack confirmed the entry was finalized before the 4:30 PM EDT deadline. The public entries page shows **Jack and Son Bruce - Play Eleven Block Party** with a **Submitted** status, YouTube video, project links, selected products, prior-work reference, and LinkedIn post.
+
 ## Fast submission order
 
 1. Paste the project name, description, products, contributions, links, and prior-work disclosure below, then use **Save Draft**.
@@ -16,7 +20,7 @@ The portal labels the video optional, but the event handbook lists a two-minute 
 ### Project Name
 
 ```text
-Play Eleven: Block Party
+Jack and Son Bruce - Play Eleven Block Party
 ```
 
 ### Project Description
@@ -194,14 +198,14 @@ https://github.com/jackzhaojin/bruce-hackathon-2026-09-12
 
 ## Final portal check
 
-- [ ] Project name says **Play Eleven: Block Party**, not the default team name.
-- [ ] Description is pasted in full.
-- [ ] Products and Other Products are filled accurately.
-- [ ] Combined Jack and Bruce contribution is pasted.
+- [x] Project name says **Jack and Son Bruce - Play Eleven Block Party**.
+- [x] Description is included.
+- [x] Products and tools are included.
+- [x] Team contribution is included.
 - [x] Video opens publicly and is no longer than two minutes (verified at 1:59).
-- [ ] All three additional links open.
-- [ ] Prior-work disclosure is included.
+- [x] Project, game, and build-log links are included.
+- [x] Prior-work reference is included.
 - [x] Social post is public and includes `#AgentsEverywhere` and the event-partner names.
-- [ ] Social post URL is pasted into the first required URL field.
-- [ ] **Save Draft** reports the required fields complete.
-- [ ] **Submit Entry** is selected before 4:30 PM EDT.
+- [x] LinkedIn post URL is attached to the entry.
+- [x] Required fields are complete.
+- [x] Entry was submitted before 4:30 PM EDT.
