@@ -39,12 +39,14 @@ Possible environments include the web, mobile, Slack, Teams, messaging, browsers
 
 - Build a browser-based game with JavaScript.
 - Decide the role of AI after reviewing the product requirements.
-- Select the AI provider and technical approach only after the core interaction is clear.
+- Use the OpenRouter POC to validate public browser-to-AI connectivity while the core interaction is being designed.
 - Keep the scope tight enough to finish and demonstrate by the end of the hackathon.
 - Host the finished static game with GitHub Pages.
 - If the game needs a player-supplied API key, ask for it at runtime.
 - If the player chooses to save a key, keep it only in that browser's local storage and provide a way to remove it.
 - Never commit an API key or place one in the published source.
+
+See [NON_FUNCTIONAL_REQUIREMENTS.md](NON_FUNCTIONAL_REQUIREMENTS.md) for the deployment, security, accessibility, reliability, and POC acceptance requirements.
 
 ## Build eligibility
 

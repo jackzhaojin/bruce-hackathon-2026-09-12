@@ -1,0 +1,10 @@
+{
+  "name": "bruce-hackathon-2026-09-12",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Jack and Bruce's AI Tinkerers Columbus hackathon prototype",
+  "scripts": {
+    "test": "node --check app.js && node --check redirect.js && node --test tests/*.test.mjs",
+    "serve": "python3 -m http.server 4173"
+  }
+}

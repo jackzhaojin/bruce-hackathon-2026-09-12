@@ -51,3 +51,15 @@ The [picture log](photos/README.md) captures the team’s build-day story.
 - Added the team’s 11:26 AM photo from the room where Jack and Bruce started the hackathon day.
 - Converted the 3.3 MB HEIC source into a web-friendly 1600×1200 JPEG of about 435 KB.
 - Verified the converted JPEG visually and confirmed it has no detectable location or camera metadata.
+
+### 12:28 EDT — OpenRouter POC prepared
+
+- Reviewed `bruce-play-ten` and adopted its dependency-free HTML, CSS, and JavaScript deployment pattern from the root of `main`.
+- Defined non-functional requirements for GitHub Pages, public access, player-owned OpenRouter keys, security, reliability, performance, accessibility, and maintainability.
+- Built Bruce’s Agent Lab as a temporary public AI test harness while Bruce continues the BRD.
+- Added an explicit Save key button backed by local storage, a Forget key control, HTTPS redirection, a restrictive Content Security Policy, request timeout handling, and visible diagnostics.
+- Defaulted the harness to `openrouter/free` and provided `openai/gpt-5.4-nano` as a more consistent low-cost option.
+- Added the ignored `local-only/.env` secret workflow and confirmed the user's key file cannot be committed.
+- Verified the local app and assets over HTTP, passed four automated static and security tests, and completed a full-page browser visual review.
+- Confirmed OpenRouter CORS preflight from the production origin and successfully tested both model options with the ignored local key.
+- Used a fake key in Chrome to verify Save across reload, Forget, required-field validation, and safe authentication-error display.
