@@ -129,3 +129,12 @@ The [picture log](photos/README.md) captures the team’s build-day story.
 - Converted the five HEIC originals, totaling about 12.3 MB, into web-friendly 1600×1200 JPEGs totaling about 1.5 MB.
 - Visually checked every converted image for content, orientation, and caption accuracy.
 - Removed embedded GPS coordinates, device details, capture settings, and other EXIF metadata before publishing the photos.
+
+### 14:53 EDT — Bruce's seven-card Skip defect fixed
+
+- Recorded Bruce's rule clarification: after discarding a deck draw with exactly seven cards face up, a player may reveal the final card or skip the flip and end the turn with it face down.
+- Added a visible **Skip (keep it face down)** button beside the turn instruction while keeping the final face-down card available as the alternate Flip choice.
+- Applied the same legal choice to OpenRouter and quick-strategy opponents through the structured AI decision contract and validation layer.
+- Locked the result phase after a placement, flip, or skip so repeated input cannot perform an extra action before the next turn.
+- Added a business-rule test for the seven-card boundary; all 14 automated tests pass.
+- Reproduced the exact state locally in a two-player browser game and verified both branches: Skip preserved the face-down card and advanced to Chip, while Flip revealed it and correctly started Chip's final turn. The browser reported no warnings or errors.

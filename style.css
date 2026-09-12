@@ -329,9 +329,10 @@ footer a { color: #a7bdcf; }
 .table-logo strong { color: rgba(68, 224, 193, 0.6); font-size: 42px; line-height: 0.9; }
 .empty-card { width: var(--card-w); height: var(--card-h); display: grid; place-items: center; border: 1px dashed var(--line); border-radius: 12px; color: var(--muted); font-size: 11px; }
 
-.message-bar { min-height: 52px; padding: 10px 15px; display: flex; align-items: center; justify-content: center; gap: 14px; border-radius: 13px; color: #c3d4e2; background: rgba(2, 14, 22, 0.55); text-align: center; font-size: 13px; line-height: 1.4; }
+.message-bar { min-height: 52px; padding: 10px 15px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 14px; border-radius: 13px; color: #c3d4e2; background: rgba(2, 14, 22, 0.55); text-align: center; font-size: 13px; line-height: 1.4; }
 .message-bar.attention { color: #fff5ce; background: rgba(255, 210, 96, 0.11); box-shadow: inset 0 0 0 1px rgba(255, 210, 96, 0.2); }
 .quick-move { flex: 0 0 auto; padding: 7px 9px; border-radius: 8px; color: var(--navy-950); background: var(--gold); cursor: pointer; font-size: 10px; font-weight: 900; }
+.skip-flip { background: var(--teal); }
 
 .human-board { margin-top: 13px; padding: 16px; border: 1px solid var(--line); border-radius: 20px; background: rgba(7, 27, 43, 0.86); }
 .human-board.active { border-color: rgba(68, 224, 193, 0.58); box-shadow: 0 0 28px rgba(68, 224, 193, 0.08); }

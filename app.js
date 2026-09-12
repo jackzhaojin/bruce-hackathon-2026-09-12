@@ -7,6 +7,7 @@ import {
   TOTAL_HOLES,
   bestPlacement,
   buildDeck,
+  canSkipLastFlip,
   cardValue,
   chooseDealerDraws,
   faceUpCount,
@@ -302,7 +303,9 @@ function humanDrawDeck() {
   if (state.currentPlayer !== 0 || state.phase !== 'awaitDraw') return;
   const card = drawFromDeck();
   state.phase = 'holdingDeck';
-  state.message = `You drew ${CARD_TYPES[card].name}. Swap it into any grid spot, or discard it and flip a face-down card.`;
+  state.message = canSkipLastFlip(state.players[0])
+    ? `You drew ${CARD_TYPES[card].name}. Swap it into your grid, or discard it and choose whether to flip your last card.`
+    : `You drew ${CARD_TYPES[card].name}. Swap it into any grid spot, or discard it and flip a face-down card.`;
   saveGame();
   render();
 }
@@ -321,6 +324,7 @@ function humanPlace(slotIndex) {
   const result = placeHeld(state.players[0], slotIndex);
   addActivity('You', `Kept ${CARD_TYPES[result.incoming].name}.`, `Replaced ${CARD_TYPES[result.outgoing].name} in slot ${slotIndex + 1}.`);
   state.message = `You placed ${CARD_TYPES[result.incoming].name} and discarded ${CARD_TYPES[result.outgoing].name}.`;
+  state.phase = 'turnResult';
   saveGame();
   render();
   window.setTimeout(finishTurn, 450);
@@ -329,18 +333,33 @@ function humanPlace(slotIndex) {
 function humanDiscardDrawn() {
   if (state.currentPlayer !== 0 || state.phase !== 'holdingDeck') return;
   const card = discardHeld();
-  state.phase = 'mustFlip';
-  state.message = `You discarded ${CARD_TYPES[card].name}. Now commit to one face-down card to reveal.`;
+  const maySkip = canSkipLastFlip(state.players[0]);
+  state.phase = maySkip ? 'maySkipFlip' : 'mustFlip';
+  state.message = maySkip
+    ? `You discarded ${CARD_TYPES[card].name}. Flip your last card, or skip and leave it face down.`
+    : `You discarded ${CARD_TYPES[card].name}. Now commit to one face-down card to reveal.`;
   saveGame();
   render();
 }
 
 function humanFlipAfterDiscard(slotIndex) {
   const human = state.players[0];
-  if (state.currentPlayer !== 0 || state.phase !== 'mustFlip' || human.grid[slotIndex].faceUp) return;
+  if (state.currentPlayer !== 0 || !['mustFlip', 'maySkipFlip'].includes(state.phase) || human.grid[slotIndex].faceUp) return;
   human.grid[slotIndex].faceUp = true;
   addActivity('You', `Flipped ${CARD_TYPES[human.grid[slotIndex].card].name}.`, `Revealed slot ${slotIndex + 1} after discarding the draw.`);
   state.message = `You revealed ${CARD_TYPES[human.grid[slotIndex].card].name}.`;
+  state.phase = 'turnResult';
+  saveGame();
+  render();
+  window.setTimeout(finishTurn, 450);
+}
+
+function humanSkipLastFlip() {
+  const human = state.players[0];
+  if (state.currentPlayer !== 0 || state.phase !== 'maySkipFlip' || !canSkipLastFlip(human)) return;
+  addActivity('You', 'Skipped the flip.', 'Kept the final card face down after discarding the draw.');
+  state.message = 'You skipped the optional flip and kept your last card face down.';
+  state.phase = 'turnResult';
   saveGame();
   render();
   window.setTimeout(finishTurn, 450);
@@ -368,7 +387,7 @@ function aiPrompt(player, topDiscard) {
   return `You are ${player.name}, an interactive AI opponent in the family card game Play Eleven: Block Party.
 Personality: ${player.personality}
 
-Make one legal, strategic decision using only visible information. Lower scores are better. Positive matching cards in a column cancel to zero. Negative targets stay negative and are especially valuable beside other negatives. Taking the discard commits you to using it. Drawing from the deck is hidden; if you choose it, set a value threshold for keeping the unknown draw and choose a face-down slot to flip if it is discarded.
+Make one legal, strategic decision using only visible information. Lower scores are better. Positive matching cards in a column cancel to zero. Negative targets stay negative and are especially valuable beside other negatives. Taking the discard commits you to using it. Drawing from the deck is hidden; if you choose it, set a value threshold for keeping the unknown draw and choose a face-down slot to flip if it is discarded. When exactly one face-down card remains, you may set skip_last_flip to true so that discarding the deck draw ends your turn without revealing that final card.
 
 Current state:
 ${JSON.stringify({
@@ -382,9 +401,9 @@ ${JSON.stringify({
   })}
 
 Return only JSON with this shape:
-{"source":"discard or deck","target_slot":0,"keep_if_value_at_most":3,"flip_slot":2,"explanation":"short strategic reason","dialogue":"one playful in-character sentence spoken at the table"}
+{"source":"discard or deck","target_slot":0,"keep_if_value_at_most":3,"flip_slot":2,"skip_last_flip":false,"explanation":"short strategic reason","dialogue":"one playful in-character sentence spoken at the table"}
 
-target_slot is used if you take the discard. flip_slot must be a currently face-down slot. Keep dialogue family-friendly and under 18 words.`;
+target_slot is used if you take the discard. flip_slot must be a currently face-down slot. skip_last_flip is legal only when exactly one card is face down and only applies if the deck draw is discarded. Keep dialogue family-friendly and under 18 words.`;
 }
 
 function responseText(content) {
@@ -458,8 +477,11 @@ async function runAITurn(expectedTurn) {
     } else {
       discardHeld();
       const faceDown = player.grid.map((slot, index) => (!slot.faceUp ? index : -1)).filter((index) => index >= 0);
+      const maySkip = faceDown.length === 1 && decision.skipLastFlip;
       const flipIndex = faceDown.includes(decision.flipSlot) ? decision.flipSlot : faceDown[0];
-      if (flipIndex !== undefined) {
+      if (maySkip) {
+        outcome = `${player.name} discarded ${CARD_TYPES[drawn].name} and skipped the optional final flip.`;
+      } else if (flipIndex !== undefined) {
         player.grid[flipIndex].faceUp = true;
         outcome = `${player.name} discarded ${CARD_TYPES[drawn].name} and flipped ${CARD_TYPES[player.grid[flipIndex].card].name}.`;
       } else {
@@ -646,7 +668,7 @@ function renderGame() {
   const initialFlip = state.phase === 'initFlip';
   const revealPhase = state.phase === 'reveal';
   const clickableHumanSlot = (slot) => {
-    if (initialFlip || revealPhase || state.phase === 'mustFlip') return !slot.faceUp;
+    if (initialFlip || revealPhase || ['mustFlip', 'maySkipFlip'].includes(state.phase)) return !slot.faceUp;
     return isHumanTurn && ['holdingDeck', 'holdingDiscard'].includes(state.phase);
   };
   const topDiscard = state.discard.at(-1);
@@ -674,7 +696,7 @@ function renderGame() {
             ${state.held && isHumanTurn ? `<div class="held-card"><span>YOUR CARD</span>${cardHTML(state.held.card)}<small>${state.held.from === 'discard' ? 'Must be used' : 'Keep or discard'}</small></div>` : '<div class="table-logo" aria-hidden="true"><span>BLOCK</span><strong>11</strong><span>PARTY</span></div>'}
             <div class="pile"><span>DISCARD</span>${topDiscard ? cardHTML(topDiscard, { clickable: discardClickable, pile: 'discard' }) : '<div class="empty-card">Empty</div>'}<small>${state.phase === 'holdingDeck' && isHumanTurn ? 'Touch to discard draw' : discardClickable ? 'Touch to take' : 'Top card'}</small></div>
           </div>
-          <div class="message-bar${isHumanTurn || initialFlip || revealPhase ? ' attention' : ''}"><span>${escapeHTML(state.message || '')}</span>${state.phase === 'aiThinking' ? '<button type="button" class="quick-move" data-act="quickAI">Use quick move</button>' : ''}</div>
+          <div class="message-bar${isHumanTurn || initialFlip || revealPhase ? ' attention' : ''}"><span>${escapeHTML(state.message || '')}</span>${state.phase === 'aiThinking' ? '<button type="button" class="quick-move" data-act="quickAI">Use quick move</button>' : ''}${state.phase === 'maySkipFlip' && isHumanTurn ? '<button type="button" class="quick-move skip-flip" data-act="skipFlip">Skip (keep it face down)</button>' : ''}</div>
         </div>
         <section class="human-board${isHumanTurn || initialFlip || revealPhase ? ' active' : ''}" aria-labelledby="your-grid-heading">
           <div class="board-heading"><div><p class="eyebrow">PLAYER 1</p><h2 id="your-grid-heading">Your grid</h2></div><div class="score-stack"><span>Showing <strong>${visibleScore(human.grid)}</strong></span><span>Game total <strong>${totalScore(human)}</strong></span></div></div>
@@ -740,9 +762,18 @@ function continueSavedGame() {
   cancelAI();
   state = saved;
   if (state.screen === 'pause') state.screen = state.pausedFrom || 'game';
-  if (state.screen === 'game' && ['aiThinking', 'aiResult'].includes(state.phase)) state.phase = 'awaitDraw';
+  if (state.screen === 'game' && state.phase === 'aiThinking') state.phase = 'awaitDraw';
   render();
-  if (state.screen === 'game' && state.phase === 'awaitDraw' && !state.players[state.currentPlayer].isHuman) announceTurn();
+  resumeTurnFlow();
+}
+
+function resumeTurnFlow() {
+  if (state.screen !== 'game') return;
+  if (['aiResult', 'turnResult'].includes(state.phase)) {
+    aiTimer = window.setTimeout(finishTurn, 0);
+  } else if (state.phase === 'awaitDraw' && !state.players[state.currentPlayer].isHuman) {
+    announceTurn();
+  }
 }
 
 function openPause() {
@@ -760,7 +791,7 @@ function resumeGame() {
   delete state.pausedFrom;
   saveGame();
   render();
-  if (state.screen === 'game' && state.phase === 'awaitDraw' && !state.players[state.currentPlayer].isHuman) announceTurn();
+  resumeTurnFlow();
 }
 
 function returnHome({ clear = false } = {}) {
@@ -841,6 +872,7 @@ app.addEventListener('click', (event) => {
     render();
     return;
   }
+  if (action === 'skipFlip') { humanSkipLastFlip(); return; }
 
   if (state.screen !== 'game') return;
   if (target.dataset.pile === 'deck') { humanDrawDeck(); return; }
@@ -853,7 +885,7 @@ app.addEventListener('click', (event) => {
     const slotIndex = Number(target.dataset.slot);
     if (state.phase === 'initFlip') humanInitialFlip(slotIndex);
     else if (state.phase === 'reveal') revealHumanCard(slotIndex);
-    else if (state.phase === 'mustFlip') humanFlipAfterDiscard(slotIndex);
+    else if (['mustFlip', 'maySkipFlip'].includes(state.phase)) humanFlipAfterDiscard(slotIndex);
     else if (['holdingDeck', 'holdingDiscard'].includes(state.phase)) humanPlace(slotIndex);
   }
 });

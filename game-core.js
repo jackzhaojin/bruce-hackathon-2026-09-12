@@ -165,6 +165,10 @@ export function faceUpCount(player) {
   return player.grid.filter((slot) => slot.faceUp).length;
 }
 
+export function canSkipLastFlip(player) {
+  return faceUpCount(player) === 7;
+}
+
 export function matchedSlotIndexes(grid) {
   const matches = new Set();
   for (let column = 0; column < 4; column += 1) {
@@ -229,6 +233,7 @@ export function fallbackAIDecision(player, topDiscard, random = Math.random) {
     targetSlot: discardPlacement?.index ?? 0,
     keepMax: 3,
     flipSlot: flipIndex,
+    skipLastFlip: faceDown.length === 1 && visibleScore(player.grid) > 18,
     explanation: shouldTakeDiscard
       ? `The ${CARD_TYPES[topDiscard].name} improves my grid, so the commitment is worth it.`
       : 'I will risk the deck and keep a low card or a useful match.',
@@ -252,6 +257,10 @@ export function normalizeAIDecision(rawDecision, player, topDiscard) {
     .filter((index) => index >= 0);
   const requestedFlip = integerInRange(rawDecision?.flip_slot, 0, 7, fallback.flipSlot);
   const flipSlot = faceDown.includes(requestedFlip) ? requestedFlip : (faceDown[0] ?? 0);
+  const requestedSkip = typeof rawDecision?.skip_last_flip === 'boolean'
+    ? rawDecision.skip_last_flip
+    : fallback.skipLastFlip;
+  const skipLastFlip = canSkipLastFlip(player) && requestedSkip;
   const safeText = (value, fallbackText, maximum = 180) => (
     typeof value === 'string' && value.trim() ? value.trim().slice(0, maximum) : fallbackText
   );
@@ -261,6 +270,7 @@ export function normalizeAIDecision(rawDecision, player, topDiscard) {
     targetSlot,
     keepMax,
     flipSlot,
+    skipLastFlip,
     explanation: safeText(rawDecision?.explanation, fallback.explanation),
     dialogue: safeText(rawDecision?.dialogue, fallback.dialogue, 120),
     via: 'llm',

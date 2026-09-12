@@ -71,3 +71,4 @@ These requirements define how the hackathon game must operate regardless of the 
 - [x] A 10-player table deals one human and nine named AI opponents.
 - [x] The local preview blocks ignored inputs, development secrets, and Git metadata.
 - [x] The deployed GitHub Pages game loads its HTML, CSS, JavaScript, and complete playable loop successfully.
+- [x] With exactly seven cards face up, discarding a deck draw presents working Flip and Skip choices for both the human and AI turn logic.

@@ -5,7 +5,9 @@ import {
   AI_PROFILES,
   CARD_TYPES,
   buildDeck,
+  canSkipLastFlip,
   chooseDealerDraws,
+  fallbackAIDecision,
   normalizeAIDecision,
   parseJSONObject,
   scoreGrid,
@@ -100,4 +102,26 @@ test('AI output is bounded to legal values and JSON can be extracted from fences
   assert.equal(decision.source, 'discard');
   assert.ok(decision.targetSlot >= 0 && decision.targetSlot <= 7);
   assert.equal(decision.dialogue, 'Fore!');
+});
+
+test('the optional skip is legal only when exactly seven cards are face up', () => {
+  const player = {
+    grid: slots(['gray', 'strike', 'birdie', 'five', 'red', 'six', 'seven', 'eight'])
+      .map((slot, index) => ({ ...slot, faceUp: index < 7 })),
+  };
+
+  assert.equal(canSkipLastFlip(player), true);
+  const skipDecision = normalizeAIDecision({ source: 'deck', skip_last_flip: true }, player, 'strike');
+  assert.equal(skipDecision.skipLastFlip, true);
+
+  player.grid[6].faceUp = false;
+  assert.equal(canSkipLastFlip(player), false);
+  const illegalSkip = normalizeAIDecision({ source: 'deck', skip_last_flip: true }, player, 'strike');
+  assert.equal(illegalSkip.skipLastFlip, false);
+
+  const highGridPlayer = {
+    grid: slots(['ten', 'eleven', 'no-target', 'out-of-bounds', 'game-over', 'time-up', 'didnt-register', 'gray'])
+      .map((slot, index) => ({ ...slot, faceUp: index < 7 })),
+  };
+  assert.equal(fallbackAIDecision(highGridPlayer, null, () => 0).skipLastFlip, true);
 });

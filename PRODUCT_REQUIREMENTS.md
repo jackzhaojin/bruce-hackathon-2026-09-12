@@ -154,6 +154,8 @@ On your turn, do **one** of the following:
   - **Keep it:** swap it for any one of your cards, whether that card is face up or face down. The replaced card goes face up on the discard pile.
   - **Don't want it:** put the drawn card on the discard pile and **flip any one of your face-down cards**.
 
+**Seven-card skip rule (confirmed by Bruce):** if exactly 7 grid cards are already face up, a player who draws from the deck and discards that draw may choose either to flip the final face-down card or to **skip the flip and end the turn with that card still face down**. The interface must show both choices: the remaining card can be touched to flip it, or the player can touch a **Skip** button. This rule applies to human and AI players. It does not change the commitment rule for a card taken from the discard pile.
+
 Bruce's worked example: Player 2 sees a 5 on the discard pile, doesn't want it, draws a Net Hazard, discards it, and flips a card (which turns out to be a Net Hazard). Player 1 draws a Club Hazard, discards it, flips a card (Net Hazard). Player 1 then draws a Strike and swaps it for a random face-down card, which turns out to have been a Club Hazard.
 
 Bruce confirmed after the intake was processed that a drawn card may replace either a face-up or face-down grid card. A replaced face-down card is revealed when it is discarded.
@@ -332,6 +334,7 @@ When you enter a game, that game's rules apply. Lava Dash also has its own Claud
 - Don't throw away a bigger negative to keep a smaller one (drawing a gray and discarding a purple is a mistake).
 - Put a new negative on the card **next to** an existing negative, not on top of it. Gray + Purple in a column = -47, versus Gray + Net Hazard = -7.
 - When flipping your first two cards, flipping a whole column is usually best.
+- With seven cards face up, decide whether revealing the last card now is worth ending the hole; after discarding a deck draw, skipping that final flip is legal.
 - Bruce's Play Ten records: best hole -48, best full game -147. Play Eleven's negatives are bigger, so these should fall.
 
 ---
