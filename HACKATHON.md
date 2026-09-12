@@ -14,7 +14,9 @@ This repository was created for the **Agents, Everywhere** hackathon organized b
 ## Team
 
 - **Team name:** Jack and Son
-- **Team:** A parent and nine-year-old son
+- **Team size:** Two
+- **Members:** Jack and his nine-year-old son, whose gamer name is Bruce
+- **Current work:** Bruce is writing the product requirements document
 - **Project title:** To be decided after the product requirements document is complete
 - **Public GitHub repository:** [bruce-hackathon-2026-09-12](https://github.com/jackzhaojin/bruce-hackathon-2026-09-12)
 
@@ -27,11 +29,12 @@ Possible environments include the web, mobile, Slack, Teams, messaging, browsers
 ## Project direction
 
 - Build a browser-based game with JavaScript.
-- Make AI essential to the game experience rather than an optional decoration.
+- Decide the role of AI after reviewing the product requirements.
+- Select the AI provider and technical approach only after the core interaction is clear.
 - Keep the scope tight enough to finish and demonstrate by the end of the hackathon.
 - Host the finished static game with GitHub Pages.
-- If OpenRouter is used, ask the player for their own API key at runtime.
-- If the player chooses to save the key, keep it only in that browser's local storage and provide a way to remove it.
+- If the game needs a player-supplied API key, ask for it at runtime.
+- If the player chooses to save a key, keep it only in that browser's local storage and provide a way to remove it.
 - Never commit an API key or place one in the published source.
 
 ## Build eligibility
