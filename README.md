@@ -15,7 +15,7 @@ The game will be built with JavaScript and published as a static site with GitHu
 - [ ] Publish with GitHub Pages
 - [ ] Record a two-minute demonstration
 - [ ] Publish the required social media post
-- [ ] Submit before the portal deadline
+- [ ] Submit before 4:30 PM EDT
 
 ## AI direction
 

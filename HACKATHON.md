@@ -11,6 +11,15 @@ This repository was created for the **Agents, Everywhere** hackathon organized b
 - **Team status:** Accepted
 - **Event portal:** [AI Tinkerers Columbus hackathon portal](https://columbus.aitinkerers.org/hackathons/h_Lv03K-ob6sU/handbook)
 
+## Key deadlines
+
+All times are in America/New_York on September 12, 2026.
+
+- **11:30 AM EDT:** Team formation closed
+- **4:30 PM EDT:** Project submission deadline
+- **5:00 PM EDT:** Round 1 judging ratings due
+- **5:30 PM EDT:** Final judging completes
+
 ## Team
 
 - **Team name:** Jack and Son
@@ -49,7 +58,7 @@ By the end of the day, the project should have a working core interaction that c
 
 ## Required submission
 
-Every team must submit all five items before the deadline shown in the hackathon portal:
+Every team must submit all five items by **4:30 PM EDT on September 12, 2026**:
 
 1. A project title
 2. A written description

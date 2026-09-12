@@ -40,3 +40,8 @@ The [picture log](photos/README.md) captures the team’s build-day story.
 - Converted the original HEIC photo into a 1600×1200 JPEG suitable for the web.
 - Reduced the image from 4.1 MB to about 518 KB and verified that the JPEG has no detectable location or camera metadata.
 
+### 11:55 EDT — Submission deadline confirmed
+
+- Confirmed from the authenticated event portal that the project submission deadline is 4:30 PM EDT.
+- Recorded Round 1 judging at 5:00 PM EDT and final judging completion at 5:30 PM EDT.
+- Updated the project checklist and event record with the exact submission cutoff.
