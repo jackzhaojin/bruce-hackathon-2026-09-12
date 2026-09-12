@@ -45,3 +45,9 @@ The [picture log](photos/README.md) captures the team’s build-day story.
 - Confirmed from the authenticated event portal that the project submission deadline is 4:30 PM EDT.
 - Recorded Round 1 judging at 5:00 PM EDT and final judging completion at 5:30 PM EDT.
 - Updated the project checklist and event record with the exact submission cutoff.
+
+### 12:02 EDT — Earlier room photo added
+
+- Added the team’s 11:26 AM photo from the room where Jack and Bruce started the hackathon day.
+- Converted the 3.3 MB HEIC source into a web-friendly 1600×1200 JPEG of about 435 KB.
+- Verified the converted JPEG visually and confirmed it has no detectable location or camera metadata.
