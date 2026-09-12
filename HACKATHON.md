@@ -16,7 +16,7 @@ This repository was created for the **Agents, Everywhere** hackathon organized b
 - **Team name:** Jack and Son
 - **Team:** A parent and nine-year-old son
 - **Project title:** To be decided after the product requirements document is complete
-- **Public GitHub repository:** [jack-and-son-hackathon-2026-09-12](https://github.com/jackzhaojin/jack-and-son-hackathon-2026-09-12)
+- **Public GitHub repository:** [bruce-hackathon-2026-09-12](https://github.com/jackzhaojin/bruce-hackathon-2026-09-12)
 
 ## Challenge
 

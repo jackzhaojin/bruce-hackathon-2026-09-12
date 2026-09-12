@@ -25,7 +25,7 @@ Because local storage can be read by JavaScript running on the same site, the fi
 
 ## Repository
 
-`jack-and-son-hackathon-2026-09-12`
+`bruce-hackathon-2026-09-12`
 
 ## Event record
 
