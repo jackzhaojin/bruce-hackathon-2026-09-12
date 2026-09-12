@@ -6,10 +6,31 @@ This repository was created for the **Agents, Everywhere** hackathon organized b
 
 - **Organizer:** AI Tinkerers Columbus
 - **Hackathon:** Agents, Everywhere
-- **Location:** Columbus, Ohio
+- **Format:** In-person Columbus build day connected to one global challenge
+- **Venue:** Rev1 Labs
+- **Address:** 1275 Kinnear Rd., Columbus, OH 43212
 - **Date:** September 12, 2026
+- **Event hours:** 10:00 AM–5:00 PM EDT
+- **Food and drinks:** Provided
+- **Parking:** Free on-site parking at Rev1 Labs
 - **Team status:** Accepted
 - **Event portal:** [AI Tinkerers Columbus hackathon portal](https://columbus.aitinkerers.org/hackathons/h_Lv03K-ob6sU/handbook)
+
+## Columbus build-day schedule
+
+All times are Eastern Time on September 12, 2026.
+
+| Time | Activity |
+| --- | --- |
+| 10:00–10:30 AM | Doors open, food, check-in, and meeting potential teammates |
+| 10:30–11:00 AM | Shared global opening and starter-kit walkthrough |
+| 11:00–11:15 AM | Team formation |
+| 11:15 AM–3:30 PM | Build session |
+| 3:30–4:00 PM | Complete project submissions in the portal |
+| 4:00–4:45 PM | Optional local show-and-tell after submitting |
+| 4:45–5:00 PM | Wrap and group photo |
+
+The Columbus show-and-tell is for sharing and learning; there is no formal local judging. The portal's **4:30 PM EDT** cutoff below is the authoritative submission deadline.
 
 ## Key deadlines
 
@@ -69,6 +90,24 @@ Every team must submit all five items by **4:30 PM EDT on September 12, 2026**:
 5. A social media post about the project that tags the event partners
 
 Every eligible project enters the same global competition.
+
+## Event partners
+
+- **Global sponsors:** OpenAI, CopilotKit, and OpenRouter
+- **Developer infrastructure partners:** Exa, Trigger.dev, Auth0, Mozilla, and Ambiguous AI
+- **Local sponsors:** Rev1 Ventures, TeamClaws, and GDG Columbus
+
+Teams may choose the tools and offers that improve their project; they do not need to use every part of the sponsor stack.
+
+## Global prizes
+
+Every eligible project from the participating cities and virtual event enters one global review process.
+
+- **First place:** $10,000 in OpenAI credits, a Mac mini for every team member, $1,000 in Exa credits, and Exa swag
+- **Second place:** $5,000 in OpenAI credits, Ray-Ban Meta glasses for every team member, $500 in Exa credits, and Exa swag
+- **Third place:** $2,500 in OpenAI credits, a LOOI Robot for every team member, $250 in Exa credits, and Exa swag
+- **Best Use of Ambiguous AI:** One NVIDIA DGX Spark for the winning team
+- **Best Use of CopilotKit:** Purple AirPods Max for every team member
 
 ## Demo checklist
 

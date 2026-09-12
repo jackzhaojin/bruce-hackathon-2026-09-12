@@ -115,3 +115,10 @@ The [picture log](photos/README.md) captures the team’s build-day story.
 - Started a fresh two-player game on the deployed site without a key, completed dealer selection and opening flips, and watched Chip make multiple interactive fallback turns.
 - Exercised the human draw, discard, and face-down flip flow, used the recovery menu to enter final reveal, flipped the remaining cards, and reached the hole-one scorecard with correct player totals.
 - Confirmed the deployed flow produced no browser console warnings or errors and left the public game open in Chrome for the team.
+
+### 14:35 EDT — Event baseline expanded
+
+- Processed the full AI Tinkerers Columbus event overview supplied by Jack and added its public event facts to the repository baseline.
+- Recorded the Rev1 Labs venue and address, event hours, parking and food details, full Columbus build-day schedule, and the optional local show-and-tell format.
+- Added the global, developer infrastructure, and local sponsor groups along with the announced global prizes.
+- Preserved the authenticated portal's 4:30 PM EDT submission cutoff as the authoritative deadline when the event overview's suggested 3:30–4:00 PM submission window differed.
