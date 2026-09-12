@@ -151,12 +151,12 @@ On your turn, do **one** of the following:
 
 - **Take the top card of the discard pile**, then swap it for one of your cards. The card you swapped out goes on the discard pile.
 - **Draw from the deck**, then either:
-  - **Keep it:** swap it for one of your cards. The swapped-out card goes on the discard pile.
-  - **Don't want it:** put it on the discard pile and **flip one of your face-down cards**.
+  - **Keep it:** swap it for any one of your cards, whether that card is face up or face down. The replaced card goes face up on the discard pile.
+  - **Don't want it:** put the drawn card on the discard pile and **flip any one of your face-down cards**.
 
 Bruce's worked example: Player 2 sees a 5 on the discard pile, doesn't want it, draws a Net Hazard, discards it, and flips a card (which turns out to be a Net Hazard). Player 1 draws a Club Hazard, discards it, flips a card (Net Hazard). Player 1 then draws a Strike and swaps it for a random face-down card, which turns out to have been a Club Hazard.
 
-`[ASSUMPTION]` You can swap onto a face-up **or** a face-down card. When you swap onto a face-down card, it is revealed as it goes to the discard pile (this is what makes Bruce's "lucky" example work). See Open Question 2.
+Bruce confirmed after the intake was processed that a drawn card may replace either a face-up or face-down grid card. A replaced face-down card is revealed when it is discarded.
 
 `[ASSUMPTION]` Play Ten's commitment rule carries over: once you take from the discard pile, you must use that card. No take-backs. See Open Question 1.
 
@@ -342,7 +342,6 @@ When you enter a game, that game's rules apply. Lava Dash also has its own Claud
 | A3 | Reversed hole-color order belongs to Birdie | 5.2, 5.3 |
 | A4 | "Highest card deals" mirrors the default rule; "Random person deals" picks a random dealer | 6 |
 | A5 | With 3+ players, order proceeds by seat after the first player, rotating each hole | 6 |
-| A6 | You may swap onto a face-up or face-down card; face-down cards are revealed when discarded | 7 |
 | A7 | Taking from the discard pile is a commitment (Play Ten rule) | 7 |
 | A8 | Flipped cards at hole end count at face value; no end-the-hole penalty | 8 |
 | A9 | Two matched columns of different cards earn no bonus | 9.2 |
@@ -358,7 +357,6 @@ When you enter a game, that game's rules apply. Lava Dash also has its own Claud
 | # | Question | Notes |
 |---|---|---|
 | 1 | Does taking from the discard pile lock you in (no take-backs)? | Asked twice; not answered. Assumed yes. |
-| 2 | Can you swap a drawn card onto a face-up card, a face-down card, or either? | Assumed either. |
 | 3 | Do two matched columns of *different* cards get a -5 bonus, or is -5 only for four of a kind? | Bruce said both at different times; final ruling was "has to be the same number." Assumed same card only. |
 | 4 | Is the four-reds -9 the total for those four cards, or a bonus on top of the column scores? | Assumed total (-2 + -2 + -5). |
 | 5 | Which card uses the reversed hole-color order? | Assumed Birdie. |

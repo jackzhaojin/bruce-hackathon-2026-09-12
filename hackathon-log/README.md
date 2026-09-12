@@ -80,3 +80,9 @@ The [picture log](photos/README.md) captures the team’s build-day story.
 - Added a public-safe requirements-session artifact, replacing the child designer's name with the gamer name Bruce while preserving the voice-transcription record.
 - Updated the repository status, working title, and AI direction: OpenRouter-backed opponents reason from visible game state and explain their moves.
 - Checked both intake files for common API-key and email patterns before producing the tracked copies; none were found.
+
+### 13:05 EDT — Draw-and-swap rule confirmed
+
+- Bruce confirmed that a card drawn from the deck can be discarded to flip any one face-down grid card.
+- Bruce also confirmed that a kept draw can replace any face-up or face-down grid card; the replaced card goes face up on the discard pile.
+- Updated the product requirements and removed this item from the assumptions and open questions.
