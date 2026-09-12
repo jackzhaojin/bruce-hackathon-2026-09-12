@@ -153,3 +153,9 @@ The [picture log](photos/README.md) captures the team’s build-day story.
 
 - Rotated the 1:31 PM coloring break, 1:43 PM lunch, and 2:42 PM tablet test photos 90 degrees clockwise. The earlier HEIC conversion dropped the orientation flag without applying it, so the three portrait shots displayed sideways.
 - Re-checked the three JPEGs after rotation: 1200×1600 portrait, no EXIF or GPS markers, captions in the picture log still accurate.
+
+### 15:05 EDT — Smiley overlay on the remaining photos
+
+- Added the same smiley emoji over Bruce's face in the five photos that showed any part of it: 11:44 AM building together, 1:02 PM requirements review, 1:31 PM coloring break, 1:43 PM lunch, and 2:42 PM tablet test. The two photos from earlier in the day already had it.
+- Rendered the overlay from the system emoji font at the head size of each photo and re-encoded the JPEGs at the same web-friendly dimensions with no EXIF or GPS data.
+- Checked all seven photos visually so the picture log and the social post use the same set.
