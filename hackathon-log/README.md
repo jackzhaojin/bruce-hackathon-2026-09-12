@@ -2,6 +2,8 @@
 
 This chronological log records the work completed during the AI Tinkerers Columbus “Agents, Everywhere” hackathon. It complements the Git history with project decisions and verification notes.
 
+The [picture log](photos/README.md) captures the team’s build-day story.
+
 ## 2026-09-12
 
 ### 11:25 EDT — Repository foundation
@@ -30,4 +32,11 @@ This chronological log records the work completed during the AI Tinkerers Columb
 - Changed the AI integration from an assumed OpenRouter plan to an open decision that will follow the product requirements.
 - Added repository instructions requiring this log to be updated throughout the hackathon.
 - Recorded standing authorization to commit and push in-scope hackathon work.
+
+### 11:52 EDT — Hackathon picture log
+
+- Moved the written build log into the `hackathon-log` folder.
+- Started a dated picture log with a photo of Jack and Bruce building together while Bruce continues the product requirements document.
+- Converted the original HEIC photo into a 1600×1200 JPEG suitable for the web.
+- Reduced the image from 4.1 MB to about 518 KB and verified that the JPEG has no detectable location or camera metadata.
 

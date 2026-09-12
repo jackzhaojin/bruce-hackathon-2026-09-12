@@ -31,4 +31,4 @@ If the finished browser game asks players to supply an API key, it must never in
 
 See [HACKATHON.md](HACKATHON.md) for the challenge, eligibility rules, technical direction, and required submission materials.
 
-Development progress and decisions are recorded in [log.md](log.md).
+Development progress, decisions, and build-day photos are recorded in the [hackathon log](hackathon-log/README.md).
