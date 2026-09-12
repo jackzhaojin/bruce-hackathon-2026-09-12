@@ -26,9 +26,12 @@ Development keys belong in the ignored `local-only/.env` file described in [loca
 - [x] Choose the game concept and working title: Play Eleven: Block Party
 - [x] Build the playable prototype
 - [x] Turn the tested AI connection into the game interaction
+- [x] Prepare the portal copy, two-minute demo script, and social post
 - [ ] Record a two-minute demonstration
 - [ ] Publish the required social media post
 - [ ] Submit before 4:30 PM EDT
+
+The paste-ready portal fields, video shot list, and social copy are in the [submission package](SUBMISSION.md).
 
 ## Product requirements
 

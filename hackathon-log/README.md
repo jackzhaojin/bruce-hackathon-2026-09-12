@@ -159,3 +159,11 @@ The [picture log](photos/README.md) captures the team’s build-day story.
 - Added the same smiley emoji over Bruce's face in the five photos that showed any part of it: 11:44 AM building together, 1:02 PM requirements review, 1:31 PM coloring break, 1:43 PM lunch, and 2:42 PM tablet test. The two photos from earlier in the day already had it.
 - Rendered the overlay from the system emoji font at the head size of each photo and re-encoded the JPEGs at the same web-friendly dimensions with no EXIF or GPS data.
 - Checked all seven photos visually so the picture log and the social post use the same set.
+
+### 15:52 EDT — Submission package prepared
+
+- Processed the copied submission-form DOM as reference material and documented every required and optional portal field without publishing its private form identifiers.
+- Wrote paste-ready project description, products list, team contribution, additional links, and prior-work disclosure that clearly credits Bruce's design and play-testing work.
+- Created a time-boxed two-minute demo script and three-clip recording plan covering the embedded AI opponent, OpenRouter move, seven-card Skip rule, scoring, public game, and source repository.
+- Drafted a LinkedIn post and optional two-post X thread with the required `#AgentsEverywhere` hashtag and event-partner names or handles.
+- Recorded the final save-and-submit checklist and preserved the 4:30 PM EDT deadline.
