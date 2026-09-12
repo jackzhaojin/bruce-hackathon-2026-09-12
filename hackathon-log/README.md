@@ -167,3 +167,9 @@ The [picture log](photos/README.md) captures the team’s build-day story.
 - Created a time-boxed two-minute demo script and three-clip recording plan covering the embedded AI opponent, OpenRouter move, seven-card Skip rule, scoring, public game, and source repository.
 - Drafted a LinkedIn post and optional two-post X thread with the required `#AgentsEverywhere` hashtag and event-partner names or handles.
 - Recorded the final save-and-submit checklist and preserved the 4:30 PM EDT deadline.
+
+### 15:56 EDT — Demonstration video published
+
+- Added the team's shareable YouTube Shorts demonstration to the submission package.
+- Verified through YouTube's public metadata and watch page that the video is available, belongs to Jack Jin, and runs for 1 minute 59 seconds.
+- Marked the demonstration requirement complete; the public LinkedIn repost and its submission-form URL remain to be added.

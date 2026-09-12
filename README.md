@@ -27,7 +27,7 @@ Development keys belong in the ignored `local-only/.env` file described in [loca
 - [x] Build the playable prototype
 - [x] Turn the tested AI connection into the game interaction
 - [x] Prepare the portal copy, two-minute demo script, and social post
-- [ ] Record a two-minute demonstration
+- [x] Record and publish a two-minute demonstration
 - [ ] Publish the required social media post
 - [ ] Submit before 4:30 PM EDT
 

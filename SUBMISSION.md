@@ -5,9 +5,9 @@ Use this page as the copy-and-paste source for the AI Tinkerers submission porta
 ## Fast submission order
 
 1. Paste the project name, description, products, contributions, links, and prior-work disclosure below, then use **Save Draft**.
-2. Record and upload the demo as an unlisted or public YouTube video or a shareable Loom video. Keep it at or below two minutes.
-3. Publish the LinkedIn post below, copy its public URL into **Social Media Post URL 1**, and save again.
-4. Paste the video URL and check all fields before selecting **Submit Entry**.
+2. Paste the verified 1:59 YouTube demonstration URL below.
+3. Repost the video on LinkedIn with the copy below, put the public LinkedIn post URL in **Social Media Post URL 1**, and save again.
+4. Check every field before selecting **Submit Entry**.
 
 The portal labels the video optional, but the event handbook lists a two-minute demonstration video as a required submission item. Treat it as required. Never show or paste an OpenRouter key in the recording, submission text, or social post.
 
@@ -56,10 +56,10 @@ Bruce was the game designer and play-tester. He created the 166-card deck, 11-ho
 
 ### Project Video
 
-Paste the public or unlisted YouTube URL, or a shareable Loom URL, after upload:
+Verified public YouTube Shorts URL (**1:59**):
 
 ```text
-VIDEO URL — ADD AFTER UPLOAD
+https://youtube.com/shorts/9rJ8PU0GHDw?feature=share
 ```
 
 ### Additional Links
@@ -163,6 +163,7 @@ It runs as a dependency-free GitHub Pages site, works with a player-owned OpenRo
 
 Play: https://www.jackzhaojin.com/bruce-hackathon-2026-09-12/
 Code: https://github.com/jackzhaojin/bruce-hackathon-2026-09-12
+Demo: https://youtube.com/shorts/9rJ8PU0GHDw?feature=share
 
 Built for #AgentsEverywhere. Thank you to AI Tinkerers, OpenAI, CopilotKit, OpenRouter, Exa, Auth0, Ambiguous AI, Trigger.dev, Mozilla.ai, and Google Cloud for supporting the global build day, and to Rev1 Ventures for hosting us in Columbus.
 ```
@@ -193,7 +194,7 @@ https://github.com/jackzhaojin/bruce-hackathon-2026-09-12
 - [ ] Description is pasted in full.
 - [ ] Products and Other Products are filled accurately.
 - [ ] Combined Jack and Bruce contribution is pasted.
-- [ ] Video opens while logged out and is no longer than two minutes.
+- [x] Video opens publicly and is no longer than two minutes (verified at 1:59).
 - [ ] All three additional links open.
 - [ ] Prior-work disclosure is included.
 - [ ] Social post is public, includes `#AgentsEverywhere`, and tags the partner pages.
