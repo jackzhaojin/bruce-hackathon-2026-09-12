@@ -173,3 +173,9 @@ The [picture log](photos/README.md) captures the team’s build-day story.
 - Added the team's shareable YouTube Shorts demonstration to the submission package.
 - Verified through YouTube's public metadata and watch page that the video is available, belongs to Jack Jin, and runs for 1 minute 59 seconds.
 - Marked the demonstration requirement complete; the public LinkedIn repost and its submission-form URL remain to be added.
+
+### 16:13 EDT — Social post published
+
+- Added the public LinkedIn post URL to the submission package for the required **Social Media Post URL 1** field.
+- Verified that the short link resolves publicly to Jack's post and that its published metadata includes the project story, public project links, event partners, and `#AgentsEverywhere`.
+- Marked the social-post requirement complete; only the final portal save, URL paste, review, and submission remain.

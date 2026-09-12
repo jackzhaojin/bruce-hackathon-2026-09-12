@@ -108,7 +108,11 @@ Play Eleven is a net-new project created during the official hackathon period. I
 
 ### Social Media Posts
 
-Publish at least one public post, then paste its URL into **Social Media Post URL 1**. The other two URL fields are optional.
+Paste this verified public LinkedIn post into **Social Media Post URL 1**. The other two URL fields are optional.
+
+```text
+https://lnkd.in/p/g98HXvZ4
+```
 
 ## Two-minute demonstration video
 
@@ -197,7 +201,7 @@ https://github.com/jackzhaojin/bruce-hackathon-2026-09-12
 - [x] Video opens publicly and is no longer than two minutes (verified at 1:59).
 - [ ] All three additional links open.
 - [ ] Prior-work disclosure is included.
-- [ ] Social post is public, includes `#AgentsEverywhere`, and tags the partner pages.
+- [x] Social post is public and includes `#AgentsEverywhere` and the event-partner names.
 - [ ] Social post URL is pasted into the first required URL field.
 - [ ] **Save Draft** reports the required fields complete.
 - [ ] **Submit Entry** is selected before 4:30 PM EDT.
