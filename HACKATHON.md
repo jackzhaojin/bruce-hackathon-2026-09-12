@@ -37,16 +37,16 @@ Possible environments include the web, mobile, Slack, Teams, messaging, browsers
 
 ## Project direction
 
-- Build a browser-based game with JavaScript.
-- Use OpenRouter-backed opponents that reason from the visible game state and explain their moves.
-- Use the OpenRouter POC to validate public browser-to-AI connectivity while the core interaction is being designed.
+- Play Eleven is a dependency-free browser game built with HTML, CSS, and JavaScript.
+- OpenRouter-backed opponents reason from the visible game state, choose legal moves, explain their strategy, and speak in distinct personalities.
+- A local strategic fallback keeps the complete game playable when a player does not provide a key or an AI request fails.
 - Keep the scope tight enough to finish and demonstrate by the end of the hackathon.
 - Host the finished static game with GitHub Pages.
 - If the game needs a player-supplied API key, ask for it at runtime.
 - If the player chooses to save a key, keep it only in that browser's local storage and provide a way to remove it.
 - Never commit an API key or place one in the published source.
 
-See [PRODUCT_REQUIREMENTS.md](PRODUCT_REQUIREMENTS.md) for Bruce's game design and [NON_FUNCTIONAL_REQUIREMENTS.md](NON_FUNCTIONAL_REQUIREMENTS.md) for the deployment, security, accessibility, reliability, and POC acceptance requirements.
+See [PRODUCT_REQUIREMENTS.md](PRODUCT_REQUIREMENTS.md) for Bruce's game design and [NON_FUNCTIONAL_REQUIREMENTS.md](NON_FUNCTIONAL_REQUIREMENTS.md) for the deployment, security, accessibility, reliability, and game acceptance requirements.
 
 ## Build eligibility
 

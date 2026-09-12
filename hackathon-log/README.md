@@ -94,3 +94,15 @@ The [picture log](photos/README.md) captures the team’s build-day story.
 - Removed the separate Claude button from the Play Eleven requirements. The LLM experience will live in interactive opponents that make real game decisions, explain their moves, talk, and react with playful personalities.
 - Updated the product requirements to mark all three decisions as confirmed and removed their former assumption and open-question entries.
 - Per Jack's direction, this was a documentation-only update; no game implementation was started.
+
+### 14:21 EDT — Play Eleven playable build completed locally
+
+- Built the dependency-free **Play Eleven: Block Party** game with the full 166-card deck, the holes 1–3 purple-card rule, 2–10 player setup, three dealer modes, one human plus up to nine named AI opponents, all 11 holes, autosave, final turns, manual reveal, scorecards, ranking, and Bruce's recovery controls.
+- Implemented Bruce's draw, discard, commitment, pairing, three-pairs, and of-a-kind rules. Added live “showing” scores, pair outlines, hole-colored Strike and Birdie cards, cross-links to Play Ten and Lava Dash, keyboard-friendly controls, responsive styling, and reduced-motion support.
+- Connected each AI turn to OpenRouter with visible-state prompting, structured legal decisions, strategy explanations, and character dialogue. Kept the local strategy fallback so the game remains playable without a key or during an API failure.
+- Improved the player-owned key flow so an unsaved key works only for the current tab, saving remains optional and explicit, and Forget clears both the session and local-storage copies. The interface never renders the key or model-supplied HTML.
+- Added a secret-safe Node preview server that serves the game while returning 404 for `local-only/`, `intake/`, `.git/`, and environment-file requests.
+- Played a two-player game through all 11 holes in Chrome, including draw/keep/swap, draw/discard/flip, AI moves, final turns, reveal, per-hole scoring, cumulative totals, and final ranking. Also verified the 10-player table with all nine AI characters.
+- Fixed the human-winner headline discovered during the final-screen review and confirmed the final results screen visually with no browser console warnings or errors.
+- Passed all 13 automated game, scoring, AI-normalization, accessibility, static-site, HTTPS, and security tests. Verified the four public local assets return HTTP 200, four private paths return 404, and the initial app files total about 96 KB.
+- Sent one current game-decision request with the ignored local OpenRouter key to `openai/gpt-5.4-nano`; it returned HTTP 200 and the complete structured move, explanation, and dialogue contract without exposing the key.

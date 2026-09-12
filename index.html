@@ -3,154 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#071a2d">
-  <meta name="description" content="A public OpenRouter test harness for Jack and Bruce's AI Tinkerers Columbus hackathon game.">
+  <meta name="theme-color" content="#071b2d">
+  <meta name="description" content="Play Eleven: Block Party, a family card game with interactive OpenRouter-powered opponents by Jack and Bruce.">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src https://openrouter.ai; img-src 'self' data:; style-src 'self'; script-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests">
   <meta name="referrer" content="no-referrer">
-  <title>Bruce's Agent Lab</title>
+  <title>Play Eleven: Block Party</title>
   <script src="redirect.js"></script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="page-shell">
-    <header class="site-header">
-      <a class="brand" href="./" aria-label="Bruce's Agent Lab home">
-        <span class="brand-mark" aria-hidden="true">B</span>
-        <span>
-          <strong>Bruce's Agent Lab</strong>
-          <small>Jack and Son · Columbus, Ohio</small>
-        </span>
-      </a>
-      <span class="connection-pill" id="key-status">Waiting for key</span>
-    </header>
-
-    <main>
-      <section class="hero" aria-labelledby="page-title">
-        <div>
-          <p class="eyebrow">Agents, Everywhere · Prototype 0.1</p>
-          <h1 id="page-title">Test the brain before we build the game.</h1>
-          <p class="hero-copy">Bruce is finishing the game requirements. This temporary lab proves that a public GitHub Pages game can talk directly to OpenRouter using a player's own key.</p>
-        </div>
-        <div class="deadline-card" aria-label="Hackathon deadline">
-          <span>Submit by</span>
-          <strong>4:30 PM</strong>
-          <small>September 12 · EDT</small>
-        </div>
-      </section>
-
-      <ul class="proof-strip" aria-label="Prototype goals">
-        <li><span aria-hidden="true">●</span> Static GitHub Pages</li>
-        <li><span aria-hidden="true">●</span> Player-owned key</li>
-        <li><span aria-hidden="true">●</span> OpenRouter ready</li>
-      </ul>
-
-      <div class="workspace-grid">
-        <section class="panel control-panel" aria-labelledby="controls-title">
-          <div class="panel-heading">
-            <div>
-              <p class="step-label">Test console</p>
-              <h2 id="controls-title">Agent brain check</h2>
-            </div>
-            <span class="poc-badge">POC</span>
-          </div>
-
-          <form id="harness-form">
-            <div class="field-group">
-              <div class="label-row">
-                <label for="api-key">OpenRouter API key</label>
-                <a href="https://openrouter.ai/settings/keys" target="_blank" rel="noreferrer">Get a key ↗</a>
-              </div>
-              <div class="key-input-row">
-                <input id="api-key" name="api-key" type="password" inputmode="text" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="sk-or-v1-…" aria-describedby="key-help" required>
-                <button class="icon-button" id="toggle-key" type="button" aria-label="Show API key" aria-pressed="false">Show</button>
-              </div>
-              <p class="field-help" id="key-help">Sent directly from this browser to OpenRouter. This site has no server.</p>
-              <div class="key-save-row">
-                <button class="save-key-button" id="save-key" type="button">Save key on this device</button>
-                <span id="storage-status" aria-live="polite">Not saved</span>
-              </div>
-            </div>
-
-            <div class="field-group">
-              <label for="model">Model</label>
-              <input id="model" name="model" value="openrouter/free" list="model-options" autocomplete="off" autocapitalize="none" spellcheck="false" required>
-              <datalist id="model-options">
-                <option value="openrouter/free">Free model router</option>
-                <option value="openai/gpt-5.4-nano">Low-cost OpenAI model</option>
-              </datalist>
-              <p class="field-help">The free router is the default. Choose the low-cost OpenAI option when you want a more consistent model.</p>
-            </div>
-
-            <div class="field-group">
-              <label for="system-prompt">Agent role</label>
-              <textarea id="system-prompt" name="system-prompt" rows="3">You are a playful game narrator helping a nine-year-old game designer. Keep the response imaginative, encouraging, and under 80 words.</textarea>
-            </div>
-
-            <div class="field-group">
-              <label for="player-prompt">Test prompt</label>
-              <textarea id="player-prompt" name="player-prompt" rows="4" required>Invent one surprising event that could happen in a family-friendly browser game. Include one choice for the player.</textarea>
-            </div>
-
-            <div class="button-row">
-              <button class="primary-button" id="run-test" type="submit">
-                <span class="button-label">Run AI check</span>
-                <span aria-hidden="true">→</span>
-              </button>
-              <button class="secondary-button" id="forget-key" type="button">Forget key</button>
-            </div>
-          </form>
-        </section>
-
-        <section class="panel result-panel" aria-labelledby="result-title">
-          <div class="panel-heading">
-            <div>
-              <p class="step-label">Live response</p>
-              <h2 id="result-title">What the agent says</h2>
-            </div>
-            <span class="response-status" id="response-status" data-tone="idle">Ready</span>
-          </div>
-
-          <div class="response-output" id="response-output" aria-live="polite">
-            Enter a key and run the check. The model's response will appear here.
-          </div>
-
-          <dl class="diagnostics" aria-label="Request diagnostics">
-            <div>
-              <dt>Model used</dt>
-              <dd id="diagnostic-model">—</dd>
-            </div>
-            <div>
-              <dt>Round trip</dt>
-              <dd id="diagnostic-time">—</dd>
-            </div>
-            <div>
-              <dt>Total tokens</dt>
-              <dd id="diagnostic-tokens">—</dd>
-            </div>
-          </dl>
-
-          <div class="privacy-note">
-            <strong>Your key stays under your control.</strong>
-            <p>It is sent only to OpenRouter for the request. It is saved in local storage only when you press Save, and the Forget button removes it. Any JavaScript on the same website origin can read local storage, so this POC loads no third-party scripts.</p>
-          </div>
-        </section>
-      </div>
-
-      <section class="waiting-card" aria-label="Product requirements status">
-        <span class="waiting-icon" aria-hidden="true">✎</span>
-        <div>
-          <strong>Game design in progress</strong>
-          <p>Bruce is working on the BRD. This lab will become the game once the core loop and AI role are decided.</p>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <span>Built by Jack and Bruce at AI Tinkerers Columbus.</span>
-      <a href="https://github.com/jackzhaojin/bruce-hackathon-2026-09-12">View source ↗</a>
-    </footer>
-  </div>
-
+  <div id="app"></div>
+  <noscript>Play Eleven needs JavaScript to run.</noscript>
   <script type="module" src="app.js"></script>
 </body>
 </html>
